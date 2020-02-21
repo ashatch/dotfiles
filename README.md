@@ -6,7 +6,7 @@ GNU stow managed dotfiles.
 
 From-scratch installation of the dot files.
 
-````
+```
 brew install stow
 git co <repo> dotfiles
 pushd dotfiles
