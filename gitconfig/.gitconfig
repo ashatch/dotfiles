@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	name = ashatch
+	email = andrew@andrewhatch.net
+
+[alias]
+br = branch
+fp = fetch --prune
+co = checkout
+undo = reset HEAD~1 --mixed
+wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard # completely reset your branch (including untracked files)
+up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+save = !git add -A && git commit -m 'SAVEPOINT'
+wip = !git add -u && git commit -m "WIP"
+amend = commit -a --amend
