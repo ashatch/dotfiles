@@ -1,15 +1,27 @@
-# This is Git's per-user configuration file.
 [user]
-	name = ashatch
-	email = andrew@andrewhatch.net
+    name = Andrew Hatch
+    email = andrew@andrewhatch.net
 
 [alias]
-br = branch
-fp = fetch --prune
-co = checkout
-undo = reset HEAD~1 --mixed
-wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard # completely reset your branch (including untracked files)
-up = !git pull --rebase --prune $@ && git submodule update --init --recursive
-save = !git add -A && git commit -m 'SAVEPOINT'
-wip = !git add -u && git commit -m "WIP"
-amend = commit -a --amend
+    fp = fetch --prune
+    co = checkout
+    br = branch
+    st = status
+    ec = config --global -e
+    po = push -u origin
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    cob = checkout -b
+    cm = !git add -A && git commit -m
+    save = !git add -A && git commit -m 'SAVEPOINT'
+    undo = reset HEAD~1 --mixed
+    amend = commit -a --amend
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    bclean = "!f() { git branch --merged ${1-develop} | grep -v " ${1-develop}$" | xargs git branch -d; }; f"
+    bdone = "!f() { git checkout ${1-develop} && git up && git bclean ${1-develop}; }; f"
+    repo-name = "!f() { name=$(git remote get-url origin); name=${name#*:}; name=${name%.git}; echo $name; }; f"
+    current-branch = rev-parse --abbrev-ref HEAD
+    tracking-branch = "!f() { name=$(git rev-parse --abbrev-ref @{u}); echo ${name#*/}; }; f"
+    pr = !open "http://bitbucket.org/$(git repo-name)/pull-requests/new?source=$(git repo-name)::$(git tracking-branch)"
+    sync = "!f() { b=$(git current-branch); git up && git co ${1-develop} && git up && git co $b && git merge ${1-develop}; }; f"
+    por = !git po && git pr
+
