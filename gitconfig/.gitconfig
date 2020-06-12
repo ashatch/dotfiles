@@ -4,9 +4,14 @@
 
 [alias]
     fp = fetch --prune
+    cp = cherry-pick
+    st = status
+    cl = clone
+    ci = commit
     co = checkout
     br = branch
-    st = status
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ec = config --global -e
     po = push -u origin
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
@@ -24,4 +29,35 @@
     pr = !open "http://bitbucket.org/$(git repo-name)/pull-requests/new?source=$(git repo-name)::$(git tracking-branch)"
     sync = "!f() { b=$(git current-branch); git up && git co ${1-develop} && git up && git co $b && git merge ${1-develop}; }; f"
     por = !git po && git pr
+    unstage = reset HEAD -- .
 
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[push]
+    default = current
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = "code --wait "
+[credential]
+    helper = osxkeychain
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
