@@ -112,3 +112,8 @@ source /Users/ashatch/Library/Preferences/org.dystroy.broot/launcher/bash/br
 PURE_PROMPT_SYMBOL="λ"
 export REPORTTIME=10
 
+### aliases ###
+alias uuid="uuidgen | tr '[A-Z]' '[a-z]'"
+cdiff() {
+    code --wait --diff $1 $2
+}
