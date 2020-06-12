@@ -1,6 +1,6 @@
 [user]
     name = Andrew Hatch
-    email = andrew@andrewhatch.net
+    email = ahatch@amplience.com
 
 [alias]
     fp = fetch --prune
