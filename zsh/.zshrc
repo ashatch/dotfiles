@@ -100,6 +100,7 @@ rbenv() {
 # use antibody for plugins, add to the .txt file mentioned below:
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
+compinit -i
 
 #### flutter ####
 export PATH="/Users/ashatch/dev/github.com/flutter/bin:${PATH}"
