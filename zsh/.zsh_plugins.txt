@@ -2,4 +2,4 @@ zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
 sindresorhus/pure
-
+docker/cli path:contrib/completion/zsh kind:fpath
