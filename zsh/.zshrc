@@ -11,8 +11,10 @@
 #   other miscellaneous interactive tools (auto_cd, manydots-magic)...
 
 ##### HISTORY #####
-HISTSIZE=250000
-SAVEHIST=10000
+HISTFILESIZE=1000000000
+HISTSIZE=1000000000
+SAVEHIST=250000
+HISTFILE=~/.zsh_history
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
@@ -54,7 +56,6 @@ export PATH="/Users/ashatch/.jenv/shims:${PATH}"
 export JENV_SHELL=zsh
 export JENV_LOADED=1
 unset JAVA_HOME
-source '/usr/local/Cellar/jenv/0.5.2/libexec/libexec/../completions/jenv.zsh'
 jenv rehash 2>/dev/null
 jenv() {
   typeset command
@@ -102,19 +103,12 @@ source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 compinit -i
 
-#### flutter ####
-export PATH="/Users/ashatch/dev/github.com/flutter/bin:${PATH}"
-
-
-### broot ####
-source /Users/ashatch/Library/Preferences/org.dystroy.broot/launcher/bash/br
-
 ### prompt ####
 PURE_PROMPT_SYMBOL="λ"
 export REPORTTIME=10
 
 ### aliases ###
-alias uuid="uuidgen | tr '[A-Z]' '[a-z]'"
+alias uuid="uuidgen | tr '[A-Z]' '[a-z]' | tr -d '\n' | pbcopy"
 cdiff() {
     code --wait --diff $1 $2
 }
