@@ -48,6 +48,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 #### brew #####
 export PATH="/usr/local/sbin:$PATH"
 
+if type brew &>/dev/null; then
+  export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 ###### git ######
 autoload -Uz compinit && compinit
 
