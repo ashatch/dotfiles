@@ -55,6 +55,9 @@ fi
 ###### git ######
 autoload -Uz compinit && compinit
 
+## python / pip
+export PATH="/Users/ashatch/Library/Python/2.7/bin:${PATH}"
+
 ###### jenv ######
 export PATH="/Users/ashatch/.jenv/shims:${PATH}"
 export JENV_SHELL=zsh
