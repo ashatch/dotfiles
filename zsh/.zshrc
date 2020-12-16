@@ -58,51 +58,57 @@ autoload -Uz compinit && compinit
 ## python / pip
 export PATH="/Users/ashatch/Library/Python/2.7/bin:${PATH}"
 
-###### jenv ######
-export PATH="/Users/ashatch/.jenv/shims:${PATH}"
-export JENV_SHELL=zsh
-export JENV_LOADED=1
-unset JAVA_HOME
-jenv rehash 2>/dev/null
-jenv() {
-  typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
 
-  case "$command" in
-  enable-plugin|rehash|shell|shell-options)
-    eval `jenv "sh-$command" "$@"`;;
-  *)
-    command jenv "$command" "$@";;
-  esac
-}
+## asdf
+
+. /usr/local/opt/asdf/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+###### jenv ######
+# export PATH="/Users/ashatch/.jenv/shims:${PATH}"
+# export JENV_SHELL=zsh
+# export JENV_LOADED=1
+# unset JAVA_HOME
+# jenv rehash 2>/dev/null
+# jenv() {
+#   typeset command
+#   command="$1"
+#   if [ "$#" -gt 0 ]; then
+#     shift
+#   fi
+
+#   case "$command" in
+#   enable-plugin|rehash|shell|shell-options)
+#     eval `jenv "sh-$command" "$@"`;;
+#   *)
+#     command jenv "$command" "$@";;
+#   esac
+# }
 
 ###### nvm ########
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 ###### rbenv #######
-export PATH="/Users/ashatch/.rbenv/shims:${PATH}"
-export RBENV_SHELL=zsh
-source '/usr/local/Cellar/rbenv/1.1.2/libexec/../completions/rbenv.zsh'
-command rbenv rehash 2>/dev/null
-rbenv() {
-  local command
-  command="${1:-}"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
+# export PATH="/Users/ashatch/.rbenv/shims:${PATH}"
+# export RBENV_SHELL=zsh
+# source '/usr/local/Cellar/rbenv/1.1.2/libexec/../completions/rbenv.zsh'
+# command rbenv rehash 2>/dev/null
+# rbenv() {
+#   local command
+#   command="${1:-}"
+#   if [ "$#" -gt 0 ]; then
+#     shift
+#   fi
 
-  case "$command" in
-  rehash|shell)
-    eval "$(rbenv "sh-$command" "$@")";;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
+#   case "$command" in
+#   rehash|shell)
+#     eval "$(rbenv "sh-$command" "$@")";;
+#   *)
+#     command rbenv "$command" "$@";;
+#   esac
+# }
 
 ########## plugin loading #####
 # use antibody for plugins, add to the .txt file mentioned below:
