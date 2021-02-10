@@ -3,4 +3,5 @@
 *.log
 *.pid
 *.env
+.config/
 

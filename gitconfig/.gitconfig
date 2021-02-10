@@ -63,3 +63,5 @@
     process = git-lfs filter-process
 [pull]
 	ff = only
+[core]
+	excludesfile = /Users/ashatch/.gitignore_global
