@@ -7,8 +7,9 @@ GNU stow managed dotfiles.
 From-scratch installation of the dot files and dependencies for
 a nice prompt, etc.
 
+Follow the [antigen](https://github.com/zsh-users/antigen) insructions.
+
 ```
-brew install getantibody/tap/antibody
 npm install --global pure-prompt
 brew install stow
 brew install asdf
