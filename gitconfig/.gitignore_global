@@ -4,4 +4,6 @@
 *.pid
 *.env
 .config/
+.eslintcache
+.tool-versions
 
