@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  roles:
+    - role: geerlingguy.mac.homebrew
+      tags: ['homebrew']
+    - role: osx_provisioner.asdf
+      tags: ['asdf']
