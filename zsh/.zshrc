@@ -63,7 +63,7 @@ export PATH="/Users/ashatch/Library/Python/2.7/bin:${PATH}"
 
 ## asdf
 
-. /usr/local/opt/asdf/asdf.sh
+. $HOME/.asdf/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh
 
 ########## plugin loading #####
