@@ -8,13 +8,15 @@ of a dev environment.
 From-scratch installation of the dot files and dependencies for
 my local machine.
 
+- Install [brew](https://brew.sh).
+- Checkout the dotfiles repo: `git clone https://github.com/ashatch/dotfiles.git ~/.dotfiles`
+- `brew install ansible`
 
-Install [brew](https://brew.sh).
+Then:
 
-```
-brew install ansible
-ansible-galaxy install -r requirements.yml
-ansible-playbook main.yml --ask-become-pass
+```bash
+ansible-galaxy install -r ~/.dotfiles/requirements.yml
+ansible-playbook ~/.dotfiles/main.yml --ask-become-pass
 ```
 
 Note, tags can be supplied to do only part of the playbook:
