@@ -69,3 +69,5 @@
 	autocrlf = input
 [pager]
 	status = false
+[init]
+	defaultBranch = main
