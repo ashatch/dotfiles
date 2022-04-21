@@ -22,12 +22,6 @@ asdf_plugins:
       - 14.18.1
     global: 14.18.1
 
-  - name: "dmd"
-    repository: "https://github.com/sylph01/asdf-dmd"
-    versions:
-      - 2.095.0
-    global: 2.095.0
-
   - name: "python"
     repository: "https://github.com/danhper/asdf-python"
     versions:
