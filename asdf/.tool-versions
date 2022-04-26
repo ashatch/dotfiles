@@ -1,0 +1,8 @@
+java adoptopenjdk-17.0.0+35
+nodejs 16.14.2
+python 3.10.2
+ruby 3.1.1
+clojure 1.10.3.822
+golang 1.16.5
+rust 1.53.0
+scala 3.0.2
