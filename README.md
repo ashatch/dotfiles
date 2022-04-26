@@ -19,12 +19,6 @@ ansible-galaxy install -r ~/.dotfiles/requirements.yml
 ansible-playbook ~/.dotfiles/main.yml --ask-become-pass
 ```
 
-Note, tags can be supplied to do only part of the playbook:
-
-```
-ansible-playbook main.yml -K --tags "asdf,homebrew"
-```
-
 Install `pure-prompt`:
 
 ```
@@ -40,4 +34,12 @@ stow gitconfig
 stow zsh
 stow asdf
 popd
+```
+
+## Also
+
+Note, tags can be supplied to do only part of the playbook:
+
+```
+ansible-playbook main.yml -K --tags "asdf,homebrew"
 ```

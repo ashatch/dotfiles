@@ -68,7 +68,7 @@ export PATH="/Users/ashatch/Library/Python/2.7/bin:${PATH}"
 
 ########## plugin loading #####
 # use antigen for plugins, add to the .txt file mentioned below:
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -77,10 +77,9 @@ antigen apply
 ### prompt ####
 PURE_PROMPT_SYMBOL="λ"
 export REPORTTIME=10
+fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit; promptinit
 prompt pure
-
-
 
 ### aliases ###
 alias uuid="uuidgen | tr '[A-Z]' '[a-z]' | tr -d '\n' | pbcopy"

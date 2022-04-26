@@ -2,12 +2,30 @@
 downloads: ~/.ansible-downloads/
 
 homebrew_installed_packages:
+  - zsh
   - git
   - gnupg
   - tig
   - stow
   - asdf
   - antigen
+  - gh
+  - awscli
+  # feat request: aws session manager (for leapp)
+
+homebrew_taps:
+  - homebrew/cask
+
+homebrew_cask_apps:
+  - firefox
+  - iterm2
+  - visual-studio-code
+  - obsidian
+  - slack
+  - spotify
+  - google-chrome
+  - brave-browser
+  - leapp
 
 asdf_plugins:
   - name: "java"
@@ -25,44 +43,20 @@ asdf_plugins:
   - name: "python"
     repository: "https://github.com/danhper/asdf-python"
     versions:
-      - 3.9.2
-    global: 3.9.2
+      - 3.10.2
+    global: 3.10.2
 
   - name: "ruby"
     repository: "https://github.com/asdf-vm/asdf-ruby"
     versions:
-      - 2.6.3
-    global: 2.6.3
+      - 3.1.1
+    global: 3.1.1
 
   - name: "clojure"
     repository: "https://github.com/halcyon/asdf-clojure"
     versions:
       - 1.10.3.822
     global: 1.10.3.822
-
-  - name: "terraform"
-    repository: "https://github.com/Banno/asdf-hashicorp"
-    versions:
-      - 0.13.6
-    global: 0.13.6
-
-  - name: "flutter"
-    repository: "https://github.com/oae/asdf-flutter"
-    versions:
-      - 2.0.6-stable
-    global: 2.0.6-stable
-
-  - name: "solidity"
-    repository: "https://github.com/diegodorado/asdf-solidity"
-    versions:
-      - 0.8.4
-    global: 0.8.4
-
-  - name: "haskell"
-    repository: "https://github.com/vic/asdf-haskell"
-    versions:
-      - 9.0.1
-    global: 9.0.1
 
   - name: "golang"
     repository: "https://github.com/kennyp/asdf-golang"
