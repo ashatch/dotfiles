@@ -26,6 +26,7 @@ homebrew_cask_apps:
   - google-chrome
   - brave-browser
   - leapp
+  - drawio
 
 asdf_plugins:
   - name: "java"
