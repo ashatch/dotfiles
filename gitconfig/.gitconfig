@@ -64,7 +64,7 @@
 [pull]
 	ff = only
 [core]
-	excludesfile = /Users/ashatch/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	pager = cat
 	autocrlf = input
 [pager]
