@@ -11,6 +11,8 @@ homebrew_installed_packages:
   - antigen
   - gh
   - awscli
+  - watch
+  - htop
   # feat request: aws session manager (for leapp)
 
 homebrew_taps:
