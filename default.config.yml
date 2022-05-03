@@ -13,6 +13,7 @@ homebrew_installed_packages:
   - awscli
   - watch
   - htop
+  - podman
   # feat request: aws session manager (for leapp)
 
 homebrew_taps:
